@@ -37,7 +37,7 @@
       "memoryReservation": 512,
       "volumesFrom": [],
       "stopTimeout": null,
-      "image": "732848044873.dkr.ecr.ap-southeast-1.amazonaws.com/seetha-ecr",
+      "image": "732848044873.dkr.ecr.ap-southeast-1.amazonaws.com/first-ecr",
       "startTimeout": null,
       "firelensConfiguration": null,
       "dependsOn": null,
