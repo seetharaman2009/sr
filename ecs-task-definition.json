@@ -5,11 +5,11 @@
   "containerDefinitions": [
     {
       "name": "first-ecr",
-      "image": "732848044873.dkr.ecr.ap-southeast-1.amazonaws.com/first-ecr:latest",
+      "image": "732848044873.dkr.ecr.ap-southeast-1.amazonaws.com/my-ecr:latest",
       "portMappings": [
         {
-          "containerPort": 80,
-          "hostPort": 80,
+          "containerPort": 3000,
+          "hostPort": 3000,
           "protocol": "tcp"
         }
       ],
