@@ -1,0 +1,22 @@
+{
+  "family": "myfirst-td",
+  "executionRoleArn": "arn:aws:iam::732848044873:role/ecsTaskExecutionRole",
+  "networkMode": "awsvpc",
+  "containerDefinitions": [
+    {
+      "name": "first-ecr",
+      "image": "732848044873.dkr.ecr.ap-southeast-1.amazonaws.com/first-ecr:latest",
+      "portMappings": [
+        {
+          "containerPort": 3000,
+          "hostPort": 3000,
+          "protocol": "tcp"
+        }
+      ],
+      "essential": true
+    }
+  ],
+  "requiresCompatibilities": ["FARGATE"],
+  "cpu": "512",
+  "memory": "1024"
+}
