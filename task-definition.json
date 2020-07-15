@@ -9,7 +9,7 @@
         "logDriver": "awslogs",
         "secretOptions": null,
         "options": {
-          "awslogs-group": "/ecs/TD",
+          "awslogs-group": "/ecs/TD-2",
           "awslogs-region": "ap-southeast-1",
           "awslogs-stream-prefix": "ecs"
         }
@@ -37,7 +37,7 @@
       "memoryReservation": 256,
       "volumesFrom": [],
       "stopTimeout": null,
-      "image": "nginx:latest",
+      "image": "732848044873.dkr.ecr.ap-southeast-1.amazonaws.com/myecr:6d280cd8d3c537c60535703bcf9dd70fde88bd4b",
       "startTimeout": null,
       "firelensConfiguration": null,
       "dependsOn": null,
@@ -54,7 +54,7 @@
       "dockerLabels": null,
       "systemControls": null,
       "privileged": null,
-      "name": "cont-15july"
+      "name": "2nd-container"
     }
   ],
   "placementConstraints": [],
@@ -64,8 +64,8 @@
     "EC2",
     "FARGATE"
   ],
-  "taskDefinitionArn": "arn:aws:ecs:ap-southeast-1:732848044873:task-definition/TD:1",
-  "family": "TD",
+  "taskDefinitionArn": "arn:aws:ecs:ap-southeast-1:732848044873:task-definition/TD-2:1",
+  "family": "TD-2",
   "requiresAttributes": [
     {
       "targetId": null,
@@ -78,6 +78,12 @@
       "targetType": null,
       "value": null,
       "name": "ecs.capability.execution-role-awslogs"
+    },
+    {
+      "targetId": null,
+      "targetType": null,
+      "value": null,
+      "name": "com.amazonaws.ecs.capability.ecr-auth"
     },
     {
       "targetId": null,
@@ -96,6 +102,12 @@
       "targetType": null,
       "value": null,
       "name": "com.amazonaws.ecs.capability.task-iam-role"
+    },
+    {
+      "targetId": null,
+      "targetType": null,
+      "value": null,
+      "name": "ecs.capability.execution-role-ecr-pull"
     },
     {
       "targetId": null,
