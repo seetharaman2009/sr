@@ -28,7 +28,7 @@ on:
     branches:
       - master
 
-name: Deploy to Amazon ECS
+name: Deploy to Amazon ECS-DEV
 
 jobs:
   deploy:
@@ -54,7 +54,7 @@ jobs:
       id: build-image
       env:
         ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-        ECR_REPOSITORY: seetha-ecr
+        ECR_REPOSITORY: di-customer-ui
         IMAGE_TAG: ${{ github.sha }}
       run: |
           # Build a docker container and
@@ -75,13 +75,13 @@ jobs:
       uses: aws-actions/amazon-ecs-render-task-definition@v1
       with:
         task-definition: task-definition.json
-        container-name: Container1
+        container-name: di-customer-ui-microservice-dev
         image: ${{ steps.build-image.outputs.image }}
 
     - name: Deploy Amazon ECS task definition
       uses: aws-actions/amazon-ecs-deploy-task-definition@v1
       with:
         task-definition: ${{ steps.task-def.outputs.task-definition }}
-        service: serv-1
-        cluster: myapp-cluster
+        service: di-customer-ui-microservice-dev
+        cluster: di-customer-ui-microservice
         wait-for-service-stability: true
