@@ -65,7 +65,7 @@
     "EC2",
     "FARGATE"
   ],
-  "taskDefinitionArn": "arn:aws:ecs:ap-southeast-1:732848044873:task-definition/di-customer-ui:39",
+  "taskDefinitionArn": "arn:aws:ecs:ap-southeast-1:732848044873:task-definition/di-customer-ui:43",
   "family": "di-customer-ui",
   "requiresAttributes": [
     {
@@ -99,7 +99,7 @@
   ],
   "networkMode": "awsvpc",
   "cpu": "256",
-  "revision": 39,
+  "revision": 43,
   "status": "ACTIVE",
   "inferenceAccelerators": null,
   "proxyConfiguration": null,
