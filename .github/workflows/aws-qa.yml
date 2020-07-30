@@ -24,7 +24,7 @@
 #    and best practices on handling the access key credentials.
 
 on:
-  release:
+  push:
     branches:
       - qa-branch
 
@@ -82,6 +82,6 @@ jobs:
       uses: aws-actions/amazon-ecs-deploy-task-definition@v1
       with:
         task-definition: ${{ steps.task-def.outputs.task-definition }}
-        service: di-customer-ui-microservice-qa
+        service: qa-testing
         cluster: di-customer-ui-microservice
         wait-for-service-stability: true
