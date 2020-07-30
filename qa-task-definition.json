@@ -65,7 +65,7 @@
     "EC2",
     "FARGATE"
   ],
-  "taskDefinitionArn": "arn:aws:ecs:ap-southeast-1:732848044873:task-definition/container-2:15",
+  "taskDefinitionArn": "arn:aws:ecs:ap-southeast-1:732848044873:task-definition/container-2:17",
   "family": "container-2",
   "requiresAttributes": [
     {
@@ -99,7 +99,7 @@
   ],
   "networkMode": "awsvpc",
   "cpu": "256",
-  "revision": 15,
+  "revision": 17,
   "status": "ACTIVE",
   "inferenceAccelerators": null,
   "proxyConfiguration": null,
