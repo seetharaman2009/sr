@@ -82,6 +82,6 @@ jobs:
       uses: aws-actions/amazon-ecs-deploy-task-definition@v1
       with:
         task-definition: ${{ steps.task-def.outputs.task-definition }}
-        service: qa-testing
+        service: di-customer-ui-microservice-qa
         cluster: di-customer-ui-microservice
         wait-for-service-stability: true
