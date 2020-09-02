@@ -38,7 +38,7 @@
       "memoryReservation": null,
       "volumesFrom": [],
       "stopTimeout": null,
-      "image": "732848044873.dkr.ecr.ap-southeast-1.amazonaws.com/di-customer-ui:latest",
+      "image": "732848044873.dkr.ecr.ap-south-1.amazonaws.com/seetha-ecr:latest",
       "startTimeout": null,
       "firelensConfiguration": null,
       "dependsOn": null,
@@ -55,7 +55,7 @@
       "dockerLabels": null,
       "systemControls": null,
       "privileged": null,
-      "name": "di-customer-ui-microservice-dev"
+      "name": "seetha-app"
     }
   ],
   "placementConstraints": [],
@@ -65,8 +65,8 @@
     "EC2",
     "FARGATE"
   ],
-  "taskDefinitionArn": "arn:aws:ecs:ap-southeast-1:732848044873:task-definition/di-customer-ui:43",
-  "family": "di-customer-ui",
+  "taskDefinitionArn": "arn:aws:ecs:ap-south-1:732848044873:task-definition/seetha-app:3",
+  "family": "seetha-app",
   "requiresAttributes": [
     {
       "targetId": null,
@@ -99,7 +99,7 @@
   ],
   "networkMode": "awsvpc",
   "cpu": "256",
-  "revision": 43,
+  "revision": 3,
   "status": "ACTIVE",
   "inferenceAccelerators": null,
   "proxyConfiguration": null,
