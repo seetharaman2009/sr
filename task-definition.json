@@ -9,9 +9,9 @@
       "entryPoint": null,
       "portMappings": [
         {
-          "hostPort": 80,
+          "hostPort": 3000,
           "protocol": "tcp",
-          "containerPort": 80
+          "containerPort": 3000
         }
       ],
       "command": null,
@@ -20,11 +20,11 @@
       "environment": [
         {
           "name": "HEALTHCHECK",
-          "value": "/"
+          "value": "/health"
         },
         {
           "name": "PORT",
-          "value": "80"
+          "value": "3000"
         }
       ],
       "resourceRequirements": null,
@@ -38,7 +38,7 @@
       "memoryReservation": null,
       "volumesFrom": [],
       "stopTimeout": null,
-      "image": "732848044873.dkr.ecr.ap-south-1.amazonaws.com/seetha-ecr:latest",
+      "image": "nginx:latest",
       "startTimeout": null,
       "firelensConfiguration": null,
       "dependsOn": null,
@@ -55,7 +55,7 @@
       "dockerLabels": null,
       "systemControls": null,
       "privileged": null,
-      "name": "seetha-app"
+      "name": "seetha-ui"
     }
   ],
   "placementConstraints": [],
@@ -65,21 +65,9 @@
     "EC2",
     "FARGATE"
   ],
-  "taskDefinitionArn": "arn:aws:ecs:ap-south-1:732848044873:task-definition/seetha-app:3",
-  "family": "seetha-app",
+  "taskDefinitionArn": "arn:aws:ecs:ap-southeast-1:732848044873:task-definition/seetha-ui:5",
+  "family": "seetha-ui",
   "requiresAttributes": [
-    {
-      "targetId": null,
-      "targetType": null,
-      "value": null,
-      "name": "com.amazonaws.ecs.capability.ecr-auth"
-    },
-    {
-      "targetId": null,
-      "targetType": null,
-      "value": null,
-      "name": "ecs.capability.execution-role-ecr-pull"
-    },
     {
       "targetId": null,
       "targetType": null,
@@ -99,7 +87,7 @@
   ],
   "networkMode": "awsvpc",
   "cpu": "256",
-  "revision": 3,
+  "revision": 5,
   "status": "ACTIVE",
   "inferenceAccelerators": null,
   "proxyConfiguration": null,
