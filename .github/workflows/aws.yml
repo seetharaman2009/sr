@@ -26,9 +26,9 @@
 on:
   push:
     branches:
-      - master
+      - branch1
 
-name: Deploy to Amazon CICD
+name: Deploy to Amazon ecs-branch1
 
 jobs:
   deploy:
