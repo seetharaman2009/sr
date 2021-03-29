@@ -5,28 +5,27 @@
     {
       "dnsSearchDomains": null,
       "environmentFiles": null,
-      "logConfiguration": null,
-      "entryPoint": null,
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "secretOptions": null,
+        "options": {
+          "awslogs-group": "/ecs/first-run-task-definition",
+          "awslogs-region": "ap-southeast-1",
+          "awslogs-stream-prefix": "ecs"
+        }
+      },
+      "entryPoint": [],
       "portMappings": [
         {
-          "hostPort": 3000,
+          "hostPort": 80,
           "protocol": "tcp",
-          "containerPort": 3000
+          "containerPort": 80
         }
       ],
-      "command": null,
+      "command": [],
       "linuxParameters": null,
       "cpu": 256,
-      "environment": [
-        {
-          "name": "HEALTHCHECK",
-          "value": "/health"
-        },
-        {
-          "name": "PORT",
-          "value": "3000"
-        }
-      ],
+      "environment": [],
       "resourceRequirements": null,
       "ulimits": null,
       "dnsServers": null,
@@ -34,8 +33,8 @@
       "workingDirectory": null,
       "secrets": null,
       "dockerSecurityOptions": null,
-      "memory": 512,
-      "memoryReservation": null,
+      "memory": null,
+      "memoryReservation": 512,
       "volumesFrom": [],
       "stopTimeout": null,
       "image": "nginx:latest",
@@ -46,7 +45,7 @@
       "interactive": null,
       "healthCheck": null,
       "essential": true,
-      "links": null,
+      "links": [],
       "hostname": null,
       "extraHosts": null,
       "pseudoTerminal": null,
@@ -55,7 +54,7 @@
       "dockerLabels": null,
       "systemControls": null,
       "privileged": null,
-      "name": "seetha-ui"
+      "name": "nginx"
     }
   ],
   "placementConstraints": [],
@@ -65,9 +64,33 @@
     "EC2",
     "FARGATE"
   ],
-  "taskDefinitionArn": "arn:aws:ecs:ap-southeast-1:732848044873:task-definition/seetha-ui:5",
-  "family": "seetha-ui",
+  "taskDefinitionArn": "arn:aws:ecs:ap-southeast-1:732848044873:task-definition/first-run-task-definition:17",
+  "family": "first-run-task-definition",
   "requiresAttributes": [
+    {
+      "targetId": null,
+      "targetType": null,
+      "value": null,
+      "name": "com.amazonaws.ecs.capability.logging-driver.awslogs"
+    },
+    {
+      "targetId": null,
+      "targetType": null,
+      "value": null,
+      "name": "ecs.capability.execution-role-awslogs"
+    },
+    {
+      "targetId": null,
+      "targetType": null,
+      "value": null,
+      "name": "com.amazonaws.ecs.capability.docker-remote-api.1.19"
+    },
+    {
+      "targetId": null,
+      "targetType": null,
+      "value": null,
+      "name": "com.amazonaws.ecs.capability.docker-remote-api.1.21"
+    },
     {
       "targetId": null,
       "targetType": null,
@@ -87,7 +110,7 @@
   ],
   "networkMode": "awsvpc",
   "cpu": "256",
-  "revision": 5,
+  "revision": 17,
   "status": "ACTIVE",
   "inferenceAccelerators": null,
   "proxyConfiguration": null,
