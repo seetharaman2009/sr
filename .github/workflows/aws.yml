@@ -26,9 +26,9 @@
 on:
   push:
     branches:
-      - 
+      - master
 
-name: Deploy to Amazon CICD
+name: Deploy to Amazon CICD-ECS
 
 jobs:
   deploy:
@@ -54,7 +54,7 @@ jobs:
       id: build-image
       env:
         ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-        ECR_REPOSITORY: seetha-ecs
+        ECR_REPOSITORY: seetha-ecr
         IMAGE_TAG: ${{ github.sha }}
       run: |
           # Build a docker container and
@@ -75,13 +75,13 @@ jobs:
       uses: aws-actions/amazon-ecs-render-task-definition@v1
       with:
         task-definition: task-definition.json
-        container-name: seetha-ui
+        container-name: myapp
         image: ${{ steps.build-image.outputs.image }}
 
     - name: Deploy Amazon ECS task definition
       uses: aws-actions/amazon-ecs-deploy-task-definition@v1
       with:
         task-definition: ${{ steps.task-def.outputs.task-definition }}
-        service: seetha-ui-serv
-        cluster: seetha-cluster
+        service: firstserv
+        cluster: cluster-app
         wait-for-service-stability: true
