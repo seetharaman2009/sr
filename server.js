@@ -9,7 +9,7 @@ const HOST = '0.0.0.0';
 // App
 const app = express();
 app.get('/', (req, res) => {
-  res.send('Hello World-CICD Pipeline via GITHUB Workflow-04-april-2025');
+  res.send('Hello World-CICD Pipeline via GITHUB Workflow-22-april-2025');
 });
 
 app.listen(PORT, HOST);
